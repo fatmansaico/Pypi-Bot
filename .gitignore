@@ -1,0 +1,4 @@
+.venv
+pypibot/data/logs
+pypibot/data/database.db
+__pycache__
