@@ -1,15 +1,14 @@
 import aiosqlite
 
-from ..config import Config
 from apscheduler.triggers.cron import CronTrigger
 
-class Database():
+class Database:
     def __init__(self) -> None:
-        self.config = Config()
+        pass
 
     async def connect(self):
-        self.cxn = await aiosqlite.connect(self.config.data_path)
-        await self.executescript(self.config.build_path)
+        self.cxn = await aiosqlite.connect("./pypibot/data/database.db")
+        await self.executescript("./pypibot/data/script.sql")
         await self.commit()
 
     async def commit(self):

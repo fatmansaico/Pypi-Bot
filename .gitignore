@@ -1,4 +1,6 @@
 .venv
 pypibot/data/logs
 pypibot/data/database.db
+pypibot/data/database.db-journal
 __pycache__
+pypibot/core/config.py
